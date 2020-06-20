@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+.Header {
+  background-color: yellow;
+  height: 70px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.service {
+  background-color: yellowgreen;
+  display: flex;
+}
+
+// .service-logo {}
+
+// .service-text {}
+
+.navigations {
+  background-color: blueviolet;
+  display: flex;
+  // justify-content: end;
+}
+
+// .mypage {}
+
+// .loginout {}
+
+.Menu {
+  background-color: #E2750F;
+  height: 35px;
+  width: 100vw;
+}
+.menu {
+  &__list {
+    display: flex;
+  }
+  &__box {
+    display: block;
+    color: white;
+    background: #386cbf;
+    font-weight: normal;
+    line-height: 14px;
+    padding: 6px 16px 4px;
+    margin: 0;
+    font-size: 20px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 120px;
+    &--search {
+      display: block;
+      color: white;
+      background: #386cbf;
+      font-weight: normal;
+      line-height: 14px;
+      padding: 6px 16px 4px;
+      margin: 0;
+      font-size: 20px;
+      height: 100%;
+      width: 200px;
+      box-sizing: border-box;
+    }
+  }
+}
+
+
+
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.side-contents {
+  // 仮の色
+  background-color: green;
+  // background-color: #f6f6f6;
+  height: calc(100vh - 105px);
+  width: 400px;
+
+}
+
+.main-contents {
+  // 仮の色
+  background-color: blue;
+  // background-color: #f7f7f7;
+  height: calc(100vh - 105px);
+  width: 800px;
+
+}
