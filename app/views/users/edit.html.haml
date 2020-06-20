@@ -1,0 +1,34 @@
+.AccountPage
+  .AccountPage__title
+    %h2 Edit Account
+    %h5 アカウントの編集
+    
+    = link_to "トップページに戻る", :back, class: 'Button'
+  .AccountPage__form
+    = form_for(current_user) do |f|
+      .FormField
+        .FormField__label--normal
+          = f.label :name
+        .FormField__input--normal
+          = f.text_field :name, autofocus: true
+      .FormField
+        .FormField__label--normal
+          = f.label :store
+        .FormField__input--normal
+          = f.text_field :store, autofocus: true
+      .FormField
+        .FormField__label--normal
+          = f.label :email
+        .FormField__input--normal
+          = f.email_field :email
+      .FormField
+        .FormField__label--normal
+          = f.label :image
+        .FormField__input--normal
+          = f.text_field :image
+      .FormField
+        .FormField__label--normal
+          = f.label :profile
+        .FormField__input--normal
+          = f.text_field :profile
+      = f.submit "Update", class: 'Button UserButton'

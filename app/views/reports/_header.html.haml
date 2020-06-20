@@ -1,0 +1,17 @@
+.Header
+  .service
+    .service-logo
+      Manatter
+    .service-text
+      レポート入力で
+      %br 業務内容を見える化に！
+  %ul.navigations
+    %li.userName
+      ようこそ
+      = current_user.name
+      さん
+    %li.mypage
+      = link_to users_path(current_user) do
+        = "マイページ"
+    %li.loginout
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button'
