@@ -1,0 +1,26 @@
+=render partial: 'reports/header'
+=render partial: 'reports/menu'
+
+.wrapper
+  .side-contents
+  .main-contents
+    .userbox
+      = link_to edit_user_path(current_user) do
+        = "マイページ編集"
+
+      .userprof
+        .image
+          画像：
+          = current_user.image
+        .name
+          名前：
+          = current_user.name
+        .store
+          店名：
+          = current_user.store
+        .email
+          メールアドレス：
+          = current_user.email
+        .profile
+          紹介文：
+          = current_user.profile
