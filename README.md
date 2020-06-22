@@ -26,24 +26,49 @@ Things you may want to cover:
 - has_many :messages
 - has_many :groups, through: :group_users
 - has_many :group_users
+- has_many :reports
 
 ## reportsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|working_day|datetime|null: false|
-|working_content|string|null: false|
-|working_time|integer|null: false|
 |impression|text||
+|workdate|references|null: false, foreign_key: true|
+|job|references|null: false, foreign_key: true|
+|hour|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - has_many :comments
+- belongs_to :date
+- belongs_to :job
+- belongs_to :hour
+
+## workdatesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|date|date|null: false|
+### Association
+- has_many :reports
+
+## jobsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|job|integer|null: false|
+### Association
+- has_many :reports
+
+## hoursテーブル
+|Column|Type|Options|
+|------|----|-------|
+|hour|integer|null: false|
+### Association
+- has_many :reports
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
-|user|referencess|null: false|
-|report|referencess|null: false|
+|user|references|null: false|
+|report|references|null: false|
 ### Association
 - belongs_to :user
 - belongs_to :report
