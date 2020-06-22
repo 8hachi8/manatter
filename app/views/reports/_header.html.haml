@@ -1,17 +1,17 @@
 .Header
-  .service
-    .service-logo
+  .App
+    .App__logo
       Manatter
-    .service-text
+    .App__text
       レポート入力で
       %br 業務内容を見える化に！
-  %ul.navigations
-    %li.userName
+  %ul.Navi
+    %li.Navi__name
       ようこそ
       = current_user.name
       さん
-    %li.mypage
+    %li.Navi__mypage
       = link_to users_path(current_user) do
         = "マイページ"
-    %li.loginout
+    %li.Navi__inout
       = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button'
