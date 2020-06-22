@@ -1,0 +1,8 @@
+=render partial: 'reports/header'
+=render partial: 'reports/menu'
+
+.Wrapper
+  =render partial: 'sideGroup'
+  .Main
+    %h1 新規チャットグループ
+    = render partial: 'form', locals: { group: @group }
