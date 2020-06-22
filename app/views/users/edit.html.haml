@@ -25,7 +25,8 @@
         .FormField__label--normal
           = f.label :image
         .FormField__input--normal
-          = f.text_field :image
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Hidden'
       .FormField
         .FormField__label--normal
           = f.label :profile

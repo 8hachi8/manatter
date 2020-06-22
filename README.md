@@ -24,8 +24,8 @@ Things you may want to cover:
 |profile|string|null: false|
 ### Association
 - has_many :messages
-- has_many :rooms, through: :entries
-- has_many :entries
+- has_many :groups, through: :group_users
+- has_many :group_users
 
 ## reportsテーブル
 |Column|Type|Options|
@@ -48,14 +48,14 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :report
 
-## roomsテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false|
+|name|string|null: false|
 ### Association
 - has_many :messages
-- has_many :users, through: :entries
-- has_many :entries
+- has_many :users, through: :group_users
+- has_many :group_users
 
 ## messagesテーブル
 |Column|Type|Options|
@@ -65,16 +65,16 @@ Things you may want to cover:
 |room|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :room
+- belongs_to :group
 - belongs_to :user
 
-## entriesテーブル
+## group_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|room|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :room
+- belongs_to :group
 - belongs_to :user
 
 

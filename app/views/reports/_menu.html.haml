@@ -1,15 +1,16 @@
 .Menu
-  .menu
-    %ul.menu__list
-      %li.menu__box
+  %ul.Menu__list
+    %li.Menu__box
       = link_to root_path(current_user) do
         = "ホーム"
-      %li.menu__box
+    %li.Menu__box
       = link_to root_path(current_user) do
         = "レポート入力"
-      %li.menu__box
-        レポート集計
-      %li.menu__box
-        グループ
-      %li.menu__box--search
-        検索
+    %li.Menu__box
+      = link_to "#" do
+        = "レポート集計"
+    %li.Menu__box
+      = link_to groups_path do
+        = "グループ"
+    %li.Menu__search
+      検索

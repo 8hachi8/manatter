@@ -8,86 +8,125 @@
   width: 100vw;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
-.service {
+.App {
   background-color: yellowgreen;
   display: flex;
+  cursor: pointer;
 }
 
-// .service-logo {}
+// .App__logo {}
 
-// .service-text {}
+// .App__text {}
 
-.navigations {
+.Navi {
   background-color: blueviolet;
   display: flex;
   // justify-content: end;
 }
 
-// .mypage {}
+// .Navi__mypage {}
 
-// .loginout {}
+// .Navi__inout {}
 
 .Menu {
   background-color: #E2750F;
-  height: 35px;
+  height: 30px;
   width: 100vw;
 }
-.menu {
+
+.Menu {
   &__list {
     display: flex;
+    position: relative;
   }
+
   &__box {
     display: block;
     color: white;
     background: #386cbf;
     font-weight: normal;
     line-height: 14px;
-    padding: 6px 16px 4px;
+    padding: 5px 10px;
     margin: 0;
-    font-size: 20px;
+    font-size: 15px;
+    text-align: center;
     box-sizing: border-box;
     height: 100%;
     width: 120px;
-    &--search {
-      display: block;
-      color: white;
-      background: #386cbf;
-      font-weight: normal;
-      line-height: 14px;
-      padding: 6px 16px 4px;
-      margin: 0;
-      font-size: 20px;
-      height: 100%;
-      width: 200px;
-      box-sizing: border-box;
-    }
+  }
+
+  &__search {
+    display: block;
+    position: absolute;
+    right: 0px;
+    color: white;
+    background: #386cbf;
+    font-weight: normal;
+    line-height: 14px;
+    padding: 6px 16px 4px;
+    margin: 0;
+    font-size: 15px;
+    height: 100%;
+    width: 200px;
+    box-sizing: border-box;
   }
 }
 
-
-
-
-.wrapper {
+.Wrapper {
   display: flex;
   justify-content: center;
 }
 
-.side-contents {
+.Side {
   // 仮の色
-  background-color: green;
+  background-color: #2f3e51;
   // background-color: #f6f6f6;
-  height: calc(100vh - 105px);
+  height: calc(100vh - 100px);
   width: 400px;
-
 }
 
-.main-contents {
+.Side__Group {
   // 仮の色
-  background-color: blue;
-  // background-color: #f7f7f7;
-  height: calc(100vh - 105px);
-  width: 800px;
+  background-color: #2f3e51;
+  // background-color: #f6f6f6;
+  height: calc(100vh - 120px);
+  width: 400px;
+}
 
+.Main {
+  // 仮の色
+  background-color: lightgoldenrodyellow;
+  // background-color: #f7f7f7;
+  height: calc(100vh - 100px);
+  width: 800px;
+  overflow: scroll;
+}
+
+.GroupList {
+  background-color: #2f3e51;
+  height: calc(100vh - 100px);
+  padding: 0 20px;
+  overflow: scroll;
+}
+
+.Group {
+  box-sizing: border-box;
+  padding: 20px 0 40px;
+
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  &__name {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  &__message {
+    font-size: 11px;
+  }
 }

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   root "reports#index"
-  # get "users#index"
   devise_for :users
   resources :users, only: [:index, :show, :edit, :update]
+  resources :groups, only: [:index, :new, :create,:edit, :update] do
+    resources :messages, only: [:index, :create]
+  end
 end
 
 

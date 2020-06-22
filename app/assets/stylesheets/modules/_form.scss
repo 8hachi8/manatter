@@ -1,0 +1,51 @@
+.Footer {
+  background-color: #dddddd;
+  height: 90px;
+  padding: 20px 50px 20px 40px;
+  box-sizing: border-box;
+}
+
+.Form {
+  display: flex;
+  justify-content: space-between;
+
+  &__contents {
+    width: 100%;
+    background-color: #ffffff;
+    position: relative;
+  }
+
+  &__inputContent {
+    height: 50px;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    border: none;
+  }
+
+  &__inputImage {
+    height: 50px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+
+    font-size: 25px;
+    line-height: 50px;
+
+  }
+
+  &__submit {
+    height: 50px;
+    width: 100px;
+    padding: 0 30px;
+    margin-left: 15px;
+    background-color: #38aef0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .Hidden {
+    display: none;
+  }
+}
