@@ -1,0 +1,21 @@
+=render partial: 'reports/header'
+=render partial: 'reports/menu'
+
+.Wrapper
+  =render partial: 'sideGroup'
+  .Main
+    .MainHeader
+      .MainHeader__group
+        .MainHeader__groupName
+          -# = @group.name
+        %ul.MainHeader__memberList
+          -# Member：
+          %li.MainHeader__member
+            -# - @group.users.each do |user|
+            -#   = user.name
+      %li.MainHeader__newButton
+        = link_to '作成', new_group_path(current_user)
+
+    .MessageField
+    
+    -# =render partial: 'messages/mainChat'
