@@ -9,10 +9,10 @@
     .SettingGroupForm__leftField
       = f.label :name, "グループ名", class: 'SettingGroupForm__label'
     .SettingGroupForm__rightField
-      = f.text_field :name, class: 'SettingGroupForm__input', placeholder: 'グループ名を入力してください'
+      = f.text_field :name, class: 'SettingGroupForm__input', placeholder: 'グループ名を入力'
   .SettingGroupForm__field
     .SettingGroupForm__leftField
-      %label.SettingGroupForm__label チャットメンバーを追加
+      %label.SettingGroupForm__label メンバーを選択
     .SettingGroupForm__rightField
       / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
       = f.collection_check_boxes :user_ids, User.all, :id, :name
