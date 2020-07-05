@@ -1,0 +1,20 @@
+.ReportBox
+  .ReportBox__list
+    %p= report.date
+    ：
+    %p= report.user.name
+    ：
+    %p= report.job.job
+    ：
+    %p
+    = report.hour.hour
+    時間：
+    %p= report.impression
+%ul.ReportBox__config
+  %li
+    = link_to '詳細', report_path(report.id), method: :get, class: "ReportBox__config--show"
+  - if user_signed_in? && current_user.id == report.user_id
+    %li
+      = link_to '編集', edit_report_path(report.id), method: :get, class: "ReportBox__config--edit"
+    %li
+      = link_to '削除', report_path(report.id), method: :delete, class: "ReportBox__config--delete"
