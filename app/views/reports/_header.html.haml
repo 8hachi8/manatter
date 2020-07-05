@@ -1,7 +1,10 @@
 .Header
   .App
     .App__logo
-      Manatter
+      = link_to root_path(current_user) do
+        = icon("fas", "tasks")
+        %span<>
+          Manatter
     .App__text
       レポート入力で
       %br 業務内容を見える化に！
@@ -10,8 +13,15 @@
       ようこそ
       = current_user.name
       さん
+    %li.Navi__image
+      %img{src: "#{current_user.image}", alt: "none", class: "img"}
     %li.Navi__mypage
-      = link_to users_path(current_user) do
-        = "マイページ"
+      = link_to users_path(current_user), id: "btn1" do
+        = icon("fas", "user", class: "Navi__mypage--icon")
+        %span<>
+        マイページ
     %li.Navi__inout
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button'
+      .Navi__inout--btn
+        =icon("fas", "sign-out-alt", class: "Navi__inout--icon")
+        =link_to "ログアウト", destroy_user_session_path, method: :delete, id: "btn2"
+
