@@ -1,0 +1,13 @@
+=render partial: 'header'
+=render partial: 'menu'
+
+.Wrapper
+  .Side
+    = render partial: 'input'
+  .Main
+    %p
+    検索結果
+    -# = pie_chart Report.group(:date).count
+    =render partial: 'repolist'
+
+=render partial: 'footer'

@@ -1,17 +1,19 @@
 class UsersController < ApplicationController
 
   def index
-    
+    # @user = User.where(user_id: current_user.id).includes(:user, :job, :hour)
   end
   
   def edit
+    # @user = User.where(user_id: current_user.id).includes(:user, :job, :hour)
   end
 
   def update
+    # @user = User.where(user_id: current_user.id).includes(:user, :job, :hour)
     if current_user.update(user_params)
-      redirect_to users_path
+      redirect_to users_path, notice: 'マイページを変更しました'
     else
-      render :edit
+      render :edit, alert: '入力箇所が足りません'
     end
   end
 

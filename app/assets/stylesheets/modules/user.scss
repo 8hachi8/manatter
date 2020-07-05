@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .AccountPage {
   width: 980px;
   margin: 60px auto;
@@ -30,6 +34,8 @@
     margin-top: 40px;
     color: #fff;
     background-color: #ccc;
+    border-radius: 25px;
+    cursor: pointer;
   }
 }
 
@@ -92,7 +98,9 @@
 .UserButton {
   margin-top: 20px;
   color: #fff;
-  background-color: #38aef0;
+  background-color:$palette-trueBlue;
+  border-radius: 25px;
+  cursor: pointer;
 }
 
 #error_explanation {

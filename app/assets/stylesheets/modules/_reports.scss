@@ -2,131 +2,115 @@
   box-sizing: border-box;
 }
 
-.Header {
-  background-color: yellow;
-  height: 70px;
-  width: 100vw;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.App {
-  background-color: yellowgreen;
-  display: flex;
-  cursor: pointer;
-}
-
-// .App__logo {}
-
-// .App__text {}
-
-.Navi {
-  background-color: blueviolet;
-  display: flex;
-  // justify-content: end;
-}
-
-// .Navi__mypage {}
-
-// .Navi__inout {}
-
-.Menu {
-  background-color: #E2750F;
-  height: 30px;
-  width: 100vw;
-}
-
-.Menu {
-  &__list {
-    display: flex;
-    position: relative;
-  }
-
-  &__box {
-    display: block;
-    color: white;
-    background: #386cbf;
-    font-weight: normal;
-    line-height: 14px;
-    padding: 5px 10px;
-    margin: 0;
-    font-size: 15px;
-    text-align: center;
-    box-sizing: border-box;
-    height: 100%;
-    width: 120px;
-  }
-
-  &__search {
-    display: block;
-    position: absolute;
-    right: 0px;
-    color: white;
-    background: #386cbf;
-    font-weight: normal;
-    line-height: 14px;
-    padding: 6px 16px 4px;
-    margin: 0;
-    font-size: 15px;
-    height: 100%;
-    width: 200px;
-    box-sizing: border-box;
-  }
-}
-
 .Wrapper {
+  height: calc(100vh - 100px);
   display: flex;
   justify-content: center;
+
 }
 
 .Side {
-  // 仮の色
-  background-color: #2f3e51;
-  // background-color: #f6f6f6;
-  height: calc(100vh - 100px);
-  width: 400px;
-}
-
-.Side__Group {
-  // 仮の色
-  background-color: #2f3e51;
-  // background-color: #f6f6f6;
-  height: calc(100vh - 120px);
-  width: 400px;
+  background-color: $palette-trueBlue;
+  width: 30vw;
 }
 
 .Main {
-  // 仮の色
-  background-color: lightgoldenrodyellow;
-  // background-color: #f7f7f7;
-  height: calc(100vh - 100px);
-  width: 800px;
+  color: #333;
+  width: 70vw;
+  padding: 0 20px ;
   overflow: scroll;
+  background-color: #fafafa;
 }
 
-.GroupList {
-  background-color: #2f3e51;
-  height: calc(100vh - 100px);
-  padding: 0 20px;
-  overflow: scroll;
-}
+.Report {
+  width: 100%;
+  text-align: center;
 
-.Group {
-  box-sizing: border-box;
-  padding: 20px 0 40px;
-
-  a {
-    text-decoration: none;
-    color: #ffffff;
-  }
-
-  &__name {
+  &__contents {
     font-size: 15px;
-    margin-bottom: 5px;
+
   }
 
-  &__message {
-    font-size: 11px;
+  &__date {
+    font-size: 15px;
+  }
+
+  &__job {
+    font-size: 15px;
+
+  }
+
+  &__times {
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+    p {
+      color: #333;
+      font-size: 14px;
+    }
+    
+    // float: left;
+    // margin-left: 43px;
+    // display: flex;
+    // text-align: center;
+    // position: relative;
+    // font-size: 50px;
+  }
+
+  &__hour {}
+
+  &__time {
+    // position: absolute;
+    // top: 0px;
+    // right: 20px;
+    // display: inline;
+    // background-color: linen;
+    font-size: 15px;
+  }
+
+  &__imp {
+    // background-color: lightskyblue;
+
+  }
+
+  &__submit {
+    // background-color: linen;
+
+  }
+
+
+}
+
+.ReportBox {
+  background-color: #ffe8d8;
+  border: 1px solid #ffe8d8;
+  border-radius: 5px;
+  display: flex;
+  &__list {
+    display: flex;
+  }
+  &__config {
+    
+    display: flex;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &--show {
+      background-color: #ffe8d8;
+      // color: #fafafa;
+      margin-right: 5px;
+      border-radius: 5px;
+    }
+    &--edit {
+      background-color: #ffe8d8;
+      // color: #fafafa;
+      margin-right: 5px;
+      border-radius: 5px;
+    }
+    &--delete {
+      background-color: #ffe8d8;
+      // color: #fafafa;
+      margin-right: 5px;
+      border-radius: 5px;
+    }
   }
 }

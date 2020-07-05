@@ -18,6 +18,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|store|string|null: false|
 |email|string|null: false|
 |password|integer|null: false|
 |image|string|null: false|
@@ -26,27 +27,47 @@ Things you may want to cover:
 - has_many :messages
 - has_many :groups, through: :group_users
 - has_many :group_users
+- has_many :report_users
+- has_many :reports, through: :report_users
 
 ## reportsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|working_day|datetime|null: false|
-|working_content|string|null: false|
-|working_time|integer|null: false|
+|date|date|null: false|
+|job|references|null: false, foreign_key: true|
+|hour|references|null: false, foreign_key: true|
 |impression|text||
+|user|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :user
 - has_many :comments
+- belongs_to :job
+- belongs_to :hour
+- belongs_to :user
+- has_many :report_users
+- has_many :users, through: :report_users
 
-## commentsテーブル
+## report_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|user|referencess|null: false|
-|report|referencess|null: false|
+|report|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :user
 - belongs_to :report
+- belongs_to :user
+
+## jobsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|job|string|null: false|
+### Association
+- has_many :reports
+
+## hoursテーブル
+|Column|Type|Options|
+|------|----|-------|
+|hour|float|null: false|
+### Association
+- has_many :reports
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -60,9 +81,9 @@ Things you may want to cover:
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|message_content|text||
-|message_image|string||
-|room|references|null: false, foreign_key: true|
+|content|string||
+|image|string||
+|group|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :group
@@ -77,6 +98,15 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user|references|null: false|
+|report|references|null: false|
+### Association
+- belongs_to :user
+- belongs_to :report
 
 * Database initialization
 

@@ -1,0 +1,12 @@
+= form_with model: @report, html: {class: "Report"}, local: true do |f|
+  %ul.Report__contents
+    %li= f.date_field :date, {use_month_numbers: true}
+    %li= f.collection_select :job_id, Job.all, :id, :job, class: 'Report__job', include_blank: "内容を選択して下さい"
+    .Report__times
+      %li= f.collection_select :hour_id, Hour.all, :id, :hour, class: 'Report__hour', include_blank: "時間を選択して下さい"
+      %p
+        時間
+    %li= f.text_area :impression, class: 'Report__imp', placeholder: '感想・改善点', rows: "5"
+  = f.submit '保存する', class: 'Report__submit'
+
+  -# %li= f.date_select :date, {use_month_numbers: true}, {class: 'Report__date'}

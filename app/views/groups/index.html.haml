@@ -3,7 +3,7 @@
 
 .Wrapper
   =render partial: 'sideGroup'
-  .Main
+  .MainChat
     .MainHeader
       .MainHeader__group
         .MainHeader__groupName
@@ -13,9 +13,13 @@
           %li.MainHeader__member
             -# - @group.users.each do |user|
             -#   = user.name
-      %li.MainHeader__newButton
+      %li.MainHeader__Button
+        = icon("fas", "user-edit")
         = link_to '作成', new_group_path(current_user)
 
     .MessageField
     
+    .Chatfooter
     -# =render partial: 'messages/mainChat'
+
+=render partial: 'reports/footer'
