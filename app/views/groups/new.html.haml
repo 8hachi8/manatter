@@ -4,5 +4,7 @@
 .Wrapper
   =render partial: 'sideGroup'
   .Main
-    %h1 新規チャットグループ
+    %h1 新規グループ作成
     = render partial: 'form', locals: { group: @group }
+
+=render partial: 'reports/footer'
