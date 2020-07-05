@@ -1,16 +1,23 @@
 .Menu
   %ul.Menu__list
-    %li.Menu__box
+    %li.Menu__btn
       = link_to root_path(current_user) do
-        = "ホーム"
-    %li.Menu__box
-      = link_to root_path(current_user) do
-        = "レポート入力"
-    %li.Menu__box
-      = link_to "#" do
-        = "レポート集計"
-    %li.Menu__box
+        = icon("fas", "calendar-alt", class: "Menu__btn--icon")
+        %span<>
+          レポート一覧
+    %li.Menu__btn
+      = link_to report_path(current_user) do
+        = icon("fas", "calendar-check", class: "Menu__btn--icon")
+        %span<>
+          マイレポート
+    %li.Menu__btn
       = link_to groups_path do
-        = "グループ"
+        = icon("fas", "users", class: "Menu__btn--icon")
+        %span<>
+          グループ
     %li.Menu__search
-      検索
+      = icon("fas", "search", class: "Menu__search--icon")
+      = form_with(url: search_reports_path, local: true, method: :get, class: "Menu__search--form") do |f|
+        = f.text_field :keyword, placeholder: "レポートを検索する", class: "Menu__search--input"
+        = f.submit "検索", class: "Menu__search--btn"
+
