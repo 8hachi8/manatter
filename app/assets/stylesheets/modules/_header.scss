@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+.Header {
+  color: #333;
+  background-color: $palette-trueOrange;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.App {
+  display: flex;
+
+  &__logo {
+    width: 170px;
+    font-size: 30px;
+    margin-left: 5px;
+  }
+
+  &__text {
+    width: 170px;
+    font-size: 15px;
+    // margin-left: 5px;
+  }
+}
+
+.Navi {
+  // width: 100vw;
+  display: flex;
+  font-size: 15px;
+
+  &__name {
+    // width: 140px;
+    line-height: 50px;
+    margin-right: 5px;
+
+  }
+
+  &__image {
+    .img {
+      height: 50px;
+      width: 50px;
+      border-radius: 100px;
+      margin-right: 5px;
+    }
+
+  }
+
+  &__mypage {
+    background-color: $palette-trueBlue;
+    height: 23px;
+    width: 90px;
+    text-align: center;
+    margin-top: 15px;
+    margin-right: 5px;
+    border-radius: 25px;
+
+    &--icon {
+      color: #fafafa;
+      margin-right: 5px;
+      margin-top: 5px;
+    }
+
+    a {
+      color: #fafafa;
+    }
+
+  }
+
+  &__inout {
+    background-color: $palette-trueBlue;
+    height: 23px;
+    width: 90px;
+    text-align: center;
+    margin-top: 15px;
+    margin-right: 5px;
+    border-radius: 25px;
+
+    &--btn {
+    }
+
+    &--icon {
+      color: #fafafa;
+      // cursor: pointer;
+    }
+
+    a {
+      color: #fafafa;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}
