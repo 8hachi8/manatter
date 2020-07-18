@@ -8,20 +8,32 @@
     .App__text
       レポート入力で
       %br 業務内容を見える化に！
-  %ul.Navi
-    %li.Navi__name
-      ようこそ
-      = current_user.name
-      さん
-    %li.Navi__image
-      %img{src: "#{current_user.image}", alt: "none", class: "img"}
-    %li.Navi__mypage
-      = link_to users_path(current_user), id: "btn1" do
-        = icon("fas", "user", class: "Navi__mypage--icon")
-        %span<>
-        マイページ
-    %li.Navi__inout
-      .Navi__inout--btn
-        =icon("fas", "sign-out-alt", class: "Navi__inout--icon")
-        =link_to "ログアウト", destroy_user_session_path, method: :delete, id: "btn2"
+  -if user_signed_in? 
+    %ul.Navi
+      %li.Navi__name
+        ようこそ
+        = current_user.nickname
+        さん
+      %li.Navi__image
+        %img{src: "#{current_user.avatar}", alt: "none", class: "img"}
+      %li.Navi__mypage
+        = link_to edit_user_registration_path, id: "btn1" do
+          = icon("fas", "user", class: "Navi__mypage--icon")
+          %span<>
+          マイページ
+      %li.Navi__inout
+        .Navi__inout--btn
+          =icon("fas", "sign-out-alt", class: "Navi__inout--icon")
+          =link_to "ログアウト", destroy_user_session_path, method: :delete, id: "btn2"
+  -else
+    %ul.Navi
+      %li.Navi__mypage
+        = link_to new_user_registration_path, id: "btn1" do
+          = icon("fas", "user", class: "Navi__mypage--icon")
+          %span<>
+          新規会員登録
+      %li.Navi__inout
+        .Navi__inout--btn
+          =icon("fas", "sign-in-alt", class: "Navi__inout--icon")
+          =link_to "ログイン", new_user_session_path, id: "btn2"
 

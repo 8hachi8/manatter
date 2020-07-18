@@ -1,17 +1,13 @@
-=render partial: 'header'
-=render partial: 'menu'
-
-.Wrapper
-  .Side
+.wrapper
+  .side
     = render partial: 'input'
-  .Main
+  .main
     %p
-    = current_user.name
+    = current_user.nickname
     さんのレポート一覧
-    -# = pie_chart Report.find(user_id: current_user.id).group(:user_id).count
+    = pie_chart Report.find(user_id: current_user.id).count
     -# = pie_chart Report.find(user_id: current_user.id).group(:job_id).count
     -# = pie_chart Report.all.group(:hour_id).count
     -# = pie_chart Report.all.group(:date).count
     =render partial: 'repolist'
-
-=render partial: 'footer'
+    

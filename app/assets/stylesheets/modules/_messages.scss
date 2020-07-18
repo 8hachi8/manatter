@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.Side__Group {
+.side__Group {
   background-color: $palette-trueBlue;
   // height: calc(100vh - 100px);
   width: 30vw;
@@ -34,11 +34,11 @@
   }
 }
 
-.MainChat {
+.mainChat {
   width: 70vw;
 }
 
-.MainHeader {
+.mainHeader {
   background-color: #ffe8d8;
   height: 50px;
   padding: 0 10px 0 30px;

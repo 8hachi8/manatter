@@ -1,9 +1,9 @@
 = form_with model: @report, html: {class: "Report"}, local: true do |f|
   %ul.Report__contents
-    %li= f.date_field :date, {use_month_numbers: true}
-    %li= f.collection_select :job_id, Job.all, :id, :job, class: 'Report__job', include_blank: "内容を選択して下さい"
+    %li= f.date_field :due_on, {use_month_numbers: true}
+    %li= f.select :job,["現金管理","伝票入力","内訳書作成","請求書作成","請求明細チェック","勤怠管理","未収金確認","未払金確認","前払金確認","前受金確認","銀行回り","接客・電話応対","その他",], prompt: "内容を選択して下さい",class: 'Report__job'
     .Report__times
-      %li= f.collection_select :hour_id, Hour.all, :id, :hour, class: 'Report__hour', include_blank: "時間を選択して下さい"
+      %li= f.select :hour,[0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0,5.5,6.0,6.5,7.0,7.5,8.0], prompt: "時間を選択して下さい", class: 'Report__hour'
       %p
         時間
     %li= f.text_area :impression, class: 'Report__imp', placeholder: '感想・改善点', rows: "5"

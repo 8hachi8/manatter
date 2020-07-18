@@ -1,10 +1,5 @@
-=render partial: 'reports/header'
-=render partial: 'reports/menu'
-
-.Wrapper
+.wrapper
   =render partial: 'sideGroup'
-  .Main
+  .main
     %h1 グループ編集
     = render partial: 'form', locals: { group: @group }
-
-=render partial: 'reports/footer'

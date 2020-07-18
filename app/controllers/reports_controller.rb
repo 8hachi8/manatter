@@ -5,7 +5,7 @@ class ReportsController < ApplicationController
 
   def index
     @report = Report.new
-    @reports = Report.all.includes(:user, :job, :hour).order("created_at DESC")
+    @reports = Report.all.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -39,7 +39,7 @@ class ReportsController < ApplicationController
 
   def show
     @report = Report.new
-    @reports = Report.where(user_id: current_user.id).includes(:user, :job, :hour).order("created_at DESC")
+    @reports = Report.where(user_id: current_user.id).includes(:user).order("created_at DESC")
   end
 
   def destroy
@@ -56,11 +56,11 @@ class ReportsController < ApplicationController
 
   private
   def report_params
-    params.require(:report).permit(:date, :job_id, :hour_id, :impression).merge(user_id: current_user.id)
+    params.require(:report).permit(:due_on, :job, :hour, :impression).merge(user_id: current_user.id)
   end
   
   def set_report
-    @report = Report.find(params[:id])
+    # @report = Report.find(params[:id])
   end
 
   def move_to_index

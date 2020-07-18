@@ -61,9 +61,11 @@ gem 'pry-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rmagick'
-gem 'gruff'
 gem 'bootstrap4-datetime-picker-rails'
 gem 'momentjs-rails'
 gem 'chartkick'
 gem 'groupdate'
 gem 'jquery-rails'
+gem "bootstrap-sass", "~>3.3.6"
+gem "jquery-ui-rails"
+gem 'mysql2'

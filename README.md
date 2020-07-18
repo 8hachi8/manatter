@@ -1,73 +1,33 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
 # manatter DB設計
 
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|store|string|null: false|
-|email|string|null: false|
-|password|integer|null: false|
-|image|string|null: false|
-|profile|string|null: false|
+|nickname|string|null: false, index|
+|email|string|null: false, unique: true, index|
+|password|string|null: false|
+|store|string||
+|introduction|text||
+|avatar|string||
 ### Association
 - has_many :messages
 - has_many :groups, through: :group_users
 - has_many :group_users
-- has_many :report_users
-- has_many :reports, through: :report_users
+- has_many :reports
+- has_many :comments
 
 ## reportsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|date|date|null: false|
-|job|references|null: false, foreign_key: true|
-|hour|references|null: false, foreign_key: true|
-|impression|text||
-|user|references|null: false, foreign_key: true|
-### Association
-- has_many :comments
-- belongs_to :job
-- belongs_to :hour
-- belongs_to :user
-- has_many :report_users
-- has_many :users, through: :report_users
-
-## report_usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|report|references|null: false, foreign_key: true|
-|user|references|null: false, foreign_key: true|
-### Association
-- belongs_to :report
-- belongs_to :user
-
-## jobsテーブル
-|Column|Type|Options|
-|------|----|-------|
+|due_on|date|null: false|
 |job|string|null: false|
-### Association
-- has_many :reports
-
-## hoursテーブル
-|Column|Type|Options|
-|------|----|-------|
 |hour|float|null: false|
+|impression|string||
+|user|references|null: false, foreign_key: true|
 ### Association
-- has_many :reports
+- belongs_to :user
+- has_many :comments
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -101,19 +61,10 @@ Things you may want to cover:
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|user|references|null: false|
-|report|references|null: false|
+|content|string||
+|image|string||
+|report|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :report
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

@@ -9,11 +9,14 @@ class UsersController < ApplicationController
   end
 
   def update
+    # binding.pry
     # @user = User.where(user_id: current_user.id).includes(:user, :job, :hour)
     if current_user.update(user_params)
-      redirect_to users_path, notice: 'マイページを変更しました'
+      redirect_to root_path
+      # notice: 'マイページを変更しました'
     else
-      render :edit, alert: '入力箇所が足りません'
+      render :edit
+      # alert: '入力箇所が足りません'
     end
   end
 
@@ -26,7 +29,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :store, :email, :image, :profile)
+    params.require(:user).permit(:nickname, :store, :email, :avatar, :introduction)
   end
 end
 

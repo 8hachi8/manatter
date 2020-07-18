@@ -1,13 +1,16 @@
 .ReportBox
   .ReportBox__list
-    %p= report.date
-    ：
-    %p= report.user.name
-    ：
-    %p= report.job.job
+    %p
+    = report.due_on
     ：
     %p
-    = report.hour.hour
+    = report.user.nickname
+    ：
+    %p
+    = report.job
+    ：
+    %p
+    = report.hour
     時間：
     %p= report.impression
 %ul.ReportBox__config

@@ -1,21 +1,19 @@
 .AccountPage
   .AccountPage__title
-    %h2 Create Account
-    %h5 新規アカウントの作成
-    = render "devise/shared/links"
+    -# = render "devise/shared/links"
   .AccountPage__form
+    .AccountPge__new
+      %p
+      アカウントをお持ちの方はこちら
+      =link_to new_user_session_path, class:'Account__new--btn' do
+        ログイン
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = devise_error_messages!
       .FormField
         .FormField__label--normal
-          = f.label :name,"名前"
+          = f.label :nickname,"名前"
         .FormField__input--normal
-          = f.text_field :name, autofocus: true
-      .FormField
-        .FormField__label--normal
-          = f.label :store,"店名"
-        .FormField__input--normal
-          = f.text_field :store, autofocus: true
+          = f.text_field :nickname, autofocus: true
       .FormField
         .FormField__label--normal
           = f.label :email,"メールアドレス "
@@ -33,4 +31,4 @@
         .FormField__input--normal
           = f.password_field :password_confirmation, autocomplete: "off"
       .actions
-        = f.submit "登録", class: 'Button UserButton'
+        = f.submit "新規登録", class: 'Button UserButton'

@@ -1,19 +1,16 @@
-=render partial: 'reports/header'
-=render partial: 'reports/menu'
-
-.Wrapper
+.wrapper
   =render partial: 'groups/sideGroup'
-  .MainChat
-    .MainHeader
-      .MainHeader__group
-        .MainHeader__groupName
+  .mainChat
+    .mainHeader
+      .mainHeader__group
+        .mainHeader__groupName
           = @group.name
-        %ul.MainHeader__memberList
+        %ul.mainHeader__memberList
           メンバー：
-          %li.MainHeader__member
+          %li.mainHeader__member
             - @group.users.each do |user|
-              = user.name
-      %li.MainHeader__Button
+              = user.nickname
+      %li.mainHeader__Button
         = icon("fas", "users-cog")
         = link_to '編集', edit_group_path(@group.id)
 
@@ -22,6 +19,3 @@
     
     .Chatfooter
       = render partial: 'mainchat'
-
-=render partial: 'reports/footer'
-

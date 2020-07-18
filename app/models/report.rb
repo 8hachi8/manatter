@@ -1,8 +1,6 @@
 class Report < ApplicationRecord
-  belongs_to :job
-  belongs_to :hour
   belongs_to :user
-  has_many :comments
+  # has_many :comments
 
   def self.search(search)
     return Report.all unless search

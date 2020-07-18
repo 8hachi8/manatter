@@ -11,4 +11,7 @@
     %link{:href => "https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700", :rel => "stylesheet"}/
   %body
     = render 'layouts/notifications'
+    = render 'reports/header'
+    = render 'reports/menu'
     = yield
+    = render 'reports/footer'

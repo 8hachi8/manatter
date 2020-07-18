@@ -1,15 +1,12 @@
-=render partial: 'header'
-=render partial: 'menu'
+=render 'report-btn'
 
-.Wrapper
-  .Side
+.wrapper
+  .side
     = render partial: 'input', locals: { report: @report }
-  .Main
+  .main
     %p
     全体のレポート一覧
     =pie_chart Report.all.group(:user_id).count
     -# = pie_chart data, download: true
     -# = pie_chart Yogurt.group(:flavor).count
     =render partial: 'repolist'
-
-=render partial: 'footer'

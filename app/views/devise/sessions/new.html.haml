@@ -1,20 +1,23 @@
 .AccountPage
   .AccountPage__title
-    %h2 Log in
-    %h5 登録しているユーザーでログイン
-    = render "devise/shared/links"
+    -# = render "devise/shared/links"
   .AccountPage__form
+    .AccountPage__new
+      %p
+      アカウントをお持ちでない方はこちら
+      =link_to new_user_registration_path, class:'Account__new--btn' do
+        新規会員登録
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .FormField
         .FormField__label--normal
-          = f.label :email,"メールアドレス "
+          = f.label :email,"メールアドレス"
         .FormField__input--normal
-          = f.email_field :email, autofocus: true
+          = f.email_field :email, autofocus: true, placeholder: "メールアドレス"
         .FormField
           .FormField__label--normal
             = f.label :password
             %i (英数字8文字以上)
           .FormField__input--normal
-            = f.password_field :password, autocomplete: "off"
+            = f.password_field :password, autocomplete: "off", placeholder: "パスワード"
         .actions
           = f.submit "ログイン", class: 'Button UserButton'

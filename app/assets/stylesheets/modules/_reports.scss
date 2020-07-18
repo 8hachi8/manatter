@@ -2,19 +2,19 @@
   box-sizing: border-box;
 }
 
-.Wrapper {
+.wrapper {
   height: calc(100vh - 100px);
   display: flex;
   justify-content: center;
 
 }
 
-.Side {
+.side {
   background-color: $palette-trueBlue;
   width: 30vw;
 }
 
-.Main {
+.main {
   color: #333;
   width: 70vw;
   padding: 0 20px ;
