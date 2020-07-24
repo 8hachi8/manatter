@@ -5,7 +5,9 @@ class ReportsController < ApplicationController
 
   def index
     @report = Report.new
-    @reports = Report.all.includes(:user).order("created_at DESC")
+    @reports = Report.all.includes(:user).order("due_on DESC")
+    @pie_due_on = 
+    @user_data = Report.all.group("due_on").count
   end
 
   def new
@@ -38,8 +40,9 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @report = Report.new
-    @reports = Report.where(user_id: current_user.id).includes(:user).order("created_at DESC")
+    @reports = Report.where(user_id: current_user.id).includes(:user).order("due_on DESC")
+    @hours = @reports.map(&:hour)
+    @due_ons = @reports.map{|report| report.due_on} 
   end
 
   def destroy
