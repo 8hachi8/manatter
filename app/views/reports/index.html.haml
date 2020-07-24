@@ -6,7 +6,7 @@
   .main
     %p
     全体のレポート一覧
-    =pie_chart Report.all.group(:user_id).count
+    = pie_chart @user_data 
     -# = pie_chart data, download: true
     -# = pie_chart Yogurt.group(:flavor).count
     =render partial: 'repolist'
