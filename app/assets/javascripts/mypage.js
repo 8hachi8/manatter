@@ -1,5 +1,5 @@
 $(function() {
-  $(".Mypage__edit").hover(function() {
+  $(".my-page-box__edit").hover(function() {
     $(this).css('background', '#0081c1');
   }, function() {
     $(this).css('background', '');
