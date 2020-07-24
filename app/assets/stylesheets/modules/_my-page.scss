@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+.my-page {
+  background: #f5f5f5;
+  font-size: 14px;
+  color: #333;
+  line-height: 1;
+  height: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+}
+
+.my-page-box {
+  background-color: #fff;
+  margin: 0 auto;
+  width: 700px;
+
+  &__edit {
+    color: #fafafa;
+    background-color: $palette-trueBlue;
+    // font-weight: normal;
+    // line-height: 10px;
+    // padding: 5px;
+    margin: 5px;
+    font-size: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    height: 100%;
+    width: 140px;
+    border-radius: 25px;
+
+    &--icon {
+      padding-right: 5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fafafa;
+    }
+  }
+
+  &__prof {
+    &__avatar {
+      .img {
+        height: 200px;
+        width: 200px;
+        border-radius: 100px;
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  // list-style: none;
+  color: #333;
+}
