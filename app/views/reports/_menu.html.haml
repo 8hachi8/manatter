@@ -6,7 +6,7 @@
         %span<>
           レポート一覧
     %li.Menu__btn
-      -# = link_to report_path(current_user) do
+      = link_to report_path(current_user) do
         = icon("fas", "calendar-check", class: "Menu__btn--icon")
         %span<>
           マイレポート
