@@ -1,4 +1,4 @@
-.Header
+.header
   .App
     .App__logo
       = link_to root_path(current_user) do
@@ -17,7 +17,7 @@
       %li.Navi__image
         %img{src: "#{current_user.avatar}", alt: "none", class: "img"}
       %li.Navi__mypage
-        = link_to edit_user_registration_path, id: "btn1" do
+        = link_to user_path(current_user), id: "btn1" do
           = icon("fas", "user", class: "Navi__mypage--icon")
           %span<>
           マイページ
