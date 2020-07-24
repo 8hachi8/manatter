@@ -1,47 +1,29 @@
-=render partial: 'reports/header'
-=render partial: 'reports/menu'
-
-.wrapper
-  .side
-    .AccountPage__title
-      -# %h2 Edit Account
-      -# %h5 アカウントの編集
-      
-      -# = link_to "トップページに戻る", :back, class: 'Button'
-  .main
-    .AccountPage__form
-      = form_for(current_user) do |f|
-        .FormField
-          .FormField__label--normal
-            = f.label :name,"名前"
-          .FormField__input--normal
-            = f.text_field :name, autofocus: true
-        .FormField
-          .FormField__label--normal
-            = f.label :store,"店名"
-          .FormField__input--normal
-            = f.text_field :store, autofocus: true
-        .FormField
-          .FormField__label--normal
-            = f.label :email,"メールアドレス "
-          .FormField__input--normal
-            = f.email_field :email
-        .FormField
-          .FormField__label--normal
-            = f.label :image,"ユーザー画像"
-          .FormField__input--normal
-            = f.file_field :image
-        .FormField
-          .FormField__label--normal
-            = f.label :profile,"紹介文"
-          .FormField__input--normal
-            = f.text_field :profile
-        = f.submit "保存", class: 'Button UserButton'
-
-=render partial: 'reports/footer'
-
-
-
--# .AccountPage
-
-
+.AccountPage__form
+  = form_for(current_user) do |f|
+    .FormField
+      .FormField__label--normal
+        = f.label :nickname,"ニックネーム"
+      .FormField__input--normal
+        = f.text_field :nickname, autofocus: true
+    .FormField
+      .FormField__label--normal
+        = f.label :store,"店名"
+      .FormField__input--normal
+        = f.text_field :store, autofocus: true
+    .FormField
+      .FormField__label--normal
+        = f.label :email,"メールアドレス "
+      .FormField__input--normal
+        = f.email_field :email
+    .FormField
+      .FormField__label--normal
+        = f.label :avatar,"ユーザー画像"
+      .FormField__input--normal
+        = f.file_field :avatar
+    .FormField
+      .FormField__label--normal
+        = f.label :introduction,"紹介文"
+      .FormField__input--normal
+        = f.text_field :introduction
+    = f.submit "保存する", class: 'Button UserButton'
+    
