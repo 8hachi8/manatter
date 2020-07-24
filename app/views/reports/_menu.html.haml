@@ -5,11 +5,11 @@
         = icon("fas", "calendar-alt", class: "Menu__btn--icon")
         %span<>
           レポート一覧
-    %li.Menu__btn
-      = link_to report_path(current_user) do
-        = icon("fas", "calendar-check", class: "Menu__btn--icon")
-        %span<>
-          マイレポート
+    -# %li.Menu__btn
+    -#   = link_to report_path(current_user) do
+    -#     = icon("fas", "calendar-check", class: "Menu__btn--icon")
+    -#     %span<>
+    -#       マイレポート
     %li.Menu__btn
       = link_to groups_path do
         = icon("fas", "users", class: "Menu__btn--icon")
