@@ -1,16 +1,16 @@
 .wrapper
   =render partial: 'sideGroup'
   .mainChat
-    .mainHeader
-      .mainHeader__group
-        .mainHeader__groupName
+    .mainheader
+      .mainheader__group
+        .mainheader__groupName
           -# = @group.name
-        %ul.mainHeader__memberList
+        %ul.mainheader__memberList
           -# Member：
-          %li.mainHeader__member
+          %li.mainheader__member
             -# - @group.users.each do |user|
             -#   = user.name
-      %li.mainHeader__Button
+      %li.mainheader__Button
         = icon("fas", "user-edit")
         = link_to '作成', new_group_path(current_user)
 
