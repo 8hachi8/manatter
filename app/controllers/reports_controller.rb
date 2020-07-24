@@ -40,9 +40,9 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @reports = Report.where(user_id: current_user.id).includes(:user).order("due_on DESC")
-    @hours = @reports.map(&:hour)
-    @due_ons = @reports.map{|report| report.due_on} 
+    # @reports = Report.where(user_id: current_user.id).includes(:user).order("due_on DESC")
+    # @hours = @reports.map(&:hour)
+    # @due_ons = @reports.map{|report| report.due_on} 
   end
 
   def destroy
