@@ -1,17 +1,22 @@
-=render partial: 'header'
-=render partial: 'menu'
-
-.wrapper
-  .side
-    = render partial: 'input', locals: { report: @report }
-  .main
-    %p
-    = current_user.name
-    さんのレポート一覧
-    -# = pie_chart Report.find(user_id: current_user.id).group(:user_id).count
-    -# = pie_chart Report.find(user_id: current_user.id).group(:job_id).count
-    -# = pie_chart Report.all.group(:hour_id).count
-    -# = pie_chart Report.all.group(:date).count
-    =render partial: 'repolist'
-
-=render partial: 'footer'
+.my-page
+  .my-page-box
+    .my-page-box__edit
+      = link_to edit_user_path(current_user) do
+        = icon("fas", "user-edit", class: "Mypage__edit-icon")
+        %span<>
+        マイページ編集
+    .my-page-box__prof
+      .my-page-box__prof__avatar
+        %img{src: current_user.avatar, alt: "none", class: "img"}
+      .my-page-box__prof__name
+        名前：
+        = current_user.nickname
+      .my-page-box__prof__store
+        店名：
+        = current_user.store
+      .my-page-box__prof__email
+        メールアドレス：
+        = current_user.email
+      .my-page-box__prof__introduction
+        紹介文：
+        = current_user.introduction
