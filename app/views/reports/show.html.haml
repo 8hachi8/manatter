@@ -5,9 +5,5 @@
     %p
     = current_user.nickname
     さんのレポート一覧
-    = pie_chart Report.find(user_id: current_user.id).count
-    -# = pie_chart Report.find(user_id: current_user.id).group(:job_id).count
-    -# = pie_chart Report.all.group(:hour_id).count
-    -# = pie_chart Report.all.group(:date).count
+    = pie_chart @reports
     =render partial: 'repolist'
-    
