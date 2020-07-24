@@ -1,34 +1,38 @@
 .AccountPage
-  .AccountPage__title
-    -# = render "devise/shared/links"
+  .AccountPage__already
+    %p
+    アカウントをお持ちの方はこちら
+    =link_to new_user_session_path, class:'Account__new--btn' do
+      ログイン
   .AccountPage__form
-    .AccountPge__new
-      %p
-      アカウントをお持ちの方はこちら
-      =link_to new_user_session_path, class:'Account__new--btn' do
-        ログイン
+    %h2 会員情報の入力
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = devise_error_messages!
       .FormField
-        .FormField__label--normal
-          = f.label :nickname,"名前"
-        .FormField__input--normal
-          = f.text_field :nickname, autofocus: true
-      .FormField
-        .FormField__label--normal
-          = f.label :email,"メールアドレス "
-        .FormField__input--normal
-          = f.email_field :email
-      .FormField
-        .FormField__label--normal
-          = f.label :password
-          %i (英数字8文字以上)
-        .FormField__input--normal
-          = f.password_field :password, autocomplete: "off"
-      .FormField
-        .FormField__label--normal
-          = f.label :password_confirmation
-        .FormField__input--normal
-          = f.password_field :password_confirmation, autocomplete: "off"
-      .actions
-        = f.submit "新規登録", class: 'Button UserButton'
+        .FormField__content
+          .FormField__label--normal
+            = f.label :nickname,"ニックネーム"
+            %span 必須
+          .FormField__input--normal
+            = f.text_field :nickname, autofocus: true
+        .FormField
+          .FormField__label--normal
+            = f.label :email,"メールアドレス"
+            %span 必須
+          .FormField__input--normal
+            = f.email_field :email
+        .FormField
+          .FormField__label--normal
+            = f.label :password
+            %i (英数字8文字以上)
+            %span 必須
+          .FormField__input--normal
+            = f.password_field :password, autocomplete: "off"
+        .FormField
+          .FormField__label--normal
+            = f.label :password_confirmation
+            %span 必須
+          .FormField__input--normal
+            = f.password_field :password_confirmation, autocomplete: "off"
+        .actions
+          = f.submit "新規登録", class: 'Button UserButton'
